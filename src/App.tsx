@@ -1,10 +1,19 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import List from "./components/List";
-import TextArea from "./components/TextArea";
+import Submit from "./components/Submit";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const [value, setValue] = useState("");
+  const [list, setList] = useState([] as string[]);
+
+  const addToDo = (value: string): void => {
+    console.log("Adding To Do:", value);
+    // console.log("og list", list);
+    // const updatedList: string[] = list.slice();
+    // updatedList.push(value);
+    // console.log("updatedList", updatedList);
+  };
 
   return (
     <>
@@ -12,7 +21,7 @@ function App() {
         <h1>To Do List App</h1>
       </div>
       <div>
-        <TextArea />
+        <Submit onSubmit={addToDo} />
         <List />
       </div>
     </>
